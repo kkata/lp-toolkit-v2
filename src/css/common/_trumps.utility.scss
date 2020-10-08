@@ -1,0 +1,20 @@
+.u-mb40 {
+  margin-bottom: vw(40) !important;
+  @include min-screen($breakpoint-pc) {
+    margin-bottom: 40px !important;
+  }
+}
+.u-show-s {
+  display: none !important;
+}
+@include min-screen($breakpoint-mobile) {
+  .u-hide-s {
+    display: none !important;
+  }
+  .u-show-s {
+    display: block !important;
+  }
+  .u-padding-remove-top-s {
+    padding-top: 0 !important;
+  }
+}

@@ -1,0 +1,22 @@
+//- 画像ディレクトリ
+- var commonImgDir = '/img/';
+
+header.c-header(data-scroll-header)
+  div.inner
+    div.header-top
+      div.logo
+        a(href="/")
+          img(src=`${commonImgDir}logo.png` alt="logo")
+          span ロゴ
+      span.nav-btn#js-nav-btn メニューボタン
+      //- PC
+      div.nav-pc
+        ul.nav-pc-list
+          li.item: a(href="/hoge/" target="_blank") pc nav menu item 1
+          li.item: a(href="/hoge/") pc nav menu item 2
+
+    nav.header-nav#js-nav
+      //- SP
+      ul.list-main-sp
+        li.item: a(href="/hoge/") sp humberger menu item
+        li.item: a(href="/") トップページ

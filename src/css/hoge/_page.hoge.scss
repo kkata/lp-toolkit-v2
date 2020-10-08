@@ -1,0 +1,54 @@
+$imgDir: "/img/";
+@import "../../../node_modules/sal.js/dist/sal";
+
+h1 {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.ttl-rpw {
+  @include responsive-font-size(24px, 34px);
+}
+.txt-rpw {
+  @include responsive-font-size(16px, 24px);
+}
+
+.card-list {
+  .item {
+    padding: 15px;
+    box-shadow: 0px 0px 10px 0px #ccc;
+    + .item {
+      margin-top: 30px;
+    }
+  }
+  .more-btn {
+    text-align: right;
+    margin-top: 15px;
+  }
+}
+
+.photo-list {
+  .item {
+    .photo1 {
+      padding-top: 56.3%;
+    }
+    .photo2 {
+      padding-top: 66.7%;
+    }
+    .photo3 {
+      padding-top: 66.7%;
+    }
+    .photo4 {
+      padding-top: 66.8%;
+    }
+    .photo5 {
+      padding-top: 75%;
+    }
+  }
+}
+
+.anchor-list {
+  .item {
+    margin-top: 15px;
+  }
+}

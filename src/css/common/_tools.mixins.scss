@@ -1,0 +1,65 @@
+@mixin responsive-font-size($font-size, $font-size-pc: $font-size, $line-height: auto) {
+  font-size: $font-size;
+  // cf. https://websemantics.uk/tools/responsive-font-calculator/
+  // font-size: ($font-size / $base-font-size) * 1rem;
+  $f: (strip-unit($font-size) / strip-unit($base-font-size)) * 1rem;
+  font-size: calc(
+    #{$f} + ((1vw - 3.75px) *
+          (
+            100 *
+              (
+                (#{strip-unit($font-size-pc)} - #{strip-unit($font-size)}) /
+                  (#{strip-unit($breakpoint-mobile)} - 375)
+              )
+          ))
+  );
+  @media (min-width: $breakpoint-mobile) {
+    font-size: $font-size-pc;
+    font-size: (strip-unit($font-size-pc) / strip-unit($base-font-size)) * 1rem;
+  }
+  @if $line-height == auto {
+    line-height: ceil($font-size / $base-line-height) *
+      ($base-line-height / $font-size);
+  } @else {
+    @if (
+      type-of($line-height) ==
+        number or
+        $line-height ==
+        inherit or
+        $line-height ==
+        normal
+    ) {
+      line-height: $line-height;
+    } @else if ($line-height != none and $line-height != false) {
+      @warn "oh! ‘#{$line-height}’ is not a valid value for `line-height`.";
+    }
+  }
+}
+
+@mixin min-screen($break-point) {
+  @media screen and (min-width: $break-point) {
+    @content;
+  }
+}
+
+// @desc - 単位付きの値から単位を取り除きます。
+// @param {Number} $number - 単位を削除する値。
+// @example - strip-unit(20px) => 20
+
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+// @desc - pxをvwに変換します。
+// @param {Number} $px - 指定したいピクセル値。
+// @param {String} $width [375] -画面サイズのピクセル値。
+// @example - vw(30) => 8vw
+// @example - vw(60, 750) => 8vw
+
+@function vw($px, $width: 375) {
+  @return (strip-unit($px) / strip-unit($width)) * 100vw;
+}

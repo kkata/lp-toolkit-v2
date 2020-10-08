@@ -1,0 +1,15 @@
+a:link {
+  color: #000099;
+}
+a:visited {
+  color: #000099;
+}
+a:hover {
+  color: #000099;
+}
+a:hover,
+a:active,
+a:focus {
+  opacity: 0.7;
+  transition: all 0.3s;
+}

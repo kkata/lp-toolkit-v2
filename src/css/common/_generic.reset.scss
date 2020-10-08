@@ -1,0 +1,206 @@
+/**
+ * 1. `width`と`height`に`margin`と`border`を含めます。
+ * 2. ドキュメントのルートフォントサイズを指定します（`rem`で参照）。
+ */
+html {
+  box-sizing: border-box; /* 1 */
+  font-size: 100%; /* 2 */
+  line-height: $global-line-height;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; /* 1 */
+}
+
+/**
+ * 1. できる限り禁則処理が実行されるようにします。
+ * 2. フォントの持っているカーニング情報を使用します。
+ * 3. Chrome、Safari、FireFoxのフォントレンダリングを合わせます。
+ */
+body {
+  word-wrap: break-word; /* 1 */
+  overflow-wrap: break-word; /* 1 */
+  font-family: $global-font-family-sans-serif;
+  background-color: $color-white;
+  color: $color-text;
+  font-kerning: normal; /* 2 */
+  -webkit-font-smoothing: subpixel-antialiased; /* 3 */
+  -moz-osx-font-smoothing: auto; /* 3 */
+}
+
+/**
+ * メインコンテンツ内は横スクロールをさせません。
+ */
+main {
+  overflow-x: hidden;
+}
+
+/**
+ * デフォルトのスタイルをリセットします。
+ */
+fieldset {
+  min-width: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/**
+ * normalize.cssのスタイルをリセットして、divのように扱います。
+ */
+legend {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+table,
+figure,
+ul,
+ol,
+dl,
+li,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol,
+dl {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 1;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/**
+ * iOSのSafariとChromeで、`text-decoration: underline;`の罫線が
+ * グリフやディセンダで途切れないようにします。
+ * https://css-tricks.com/almanac/properties/t/text-decoration-skip/
+ */
+a {
+  -webkit-text-decoration-skip: none;
+}
+
+code,
+kbd,
+samp {
+  font-family: $global-font-family-monospace;
+  font-size: 1rem;
+}
+
+/**
+ * 日本語では斜体を使用しないため。
+ */
+i,
+cite,
+em,
+address {
+  font-style: normal;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+  border: 0 none;
+  text-decoration: none;
+  background: transparent;
+}
+
+/**
+ * キーボードでアクセスできない要素のフォーカス表示を消します。
+ * Credit: https://github.com/suitcss/base
+ */
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
+
+/**
+ * IE10以降の`input[type="text"]`で入力内容の消去機能を非表示にします。
+ */
+[type="text"]::-ms-clear {
+  visibility: hidden;
+}
+
+/**
+ * IE10以降の`input[type="password"]`でマスクの一時的解除機能を非表示にします。
+ */
+[type="password"]::-ms-reveal {
+  visibility: hidden;
+}
+
+/**
+ * IEとEdgeはスピンボタンに未対応のため、ChromeとFireFoxで非表示にします。
+ */
+[type="number"]::-webkit-outer-spin-button,
+[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+// フォーカスインジゲータはキーボード操作のときにだけ表示します。
+[data-whatinput="mouse"] *:focus,
+[data-whatinput="touch"] *:focus {
+  outline: none;
+}
+
+button {
+  appearance: none;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  // outline: none;
+}
+a,
+button {
+  cursor: pointer;
+  &[disabled] {
+    cursor: default;
+  }
+}
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  cursor: pointer;
+  &[disabled] {
+    cursor: default;
+  }
+}
+select::-ms-expand {
+  display: none;
+}
+
+a {
+  &:link,
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
+    color: inherit;
+    text-decoration: none;
+  }
+}

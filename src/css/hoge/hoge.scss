@@ -1,0 +1,33 @@
+// SETTINGS
+// プリプロセッサで利用するグローバル変数や全体の設定
+@import "../common/settings.global";
+
+// TOOLS
+// プリプロセッサで利用するmixinやfunctionなど
+@import "../common/tools.mixins";
+
+// GENERIC
+// reset、normalizeなど
+@import "../common/generic.normalize";
+@import "../common/generic.reset";
+@import "../common/generic.base";
+
+// OBJECTS
+// OOCSSのレイヤー。装飾のスタイルを持たないデザインパターン
+// @import "../common/objects.wrappers";
+@import "../common/objects.layout";
+
+// COMPONENTS
+// 装飾のスタイルを持つUIパーツ
+// @import "../common/components.page-title";
+@import "../common/components";
+
+// TRUMPS
+// ヘルパー、ユーティリティ
+// 原則 !important を指定する
+@import "../common/trumps.links";
+@import "../common/trumps.utility";
+
+// PAGE
+// 各ページ専用のスタイル
+@import "page.hoge";

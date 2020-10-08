@@ -1,0 +1,278 @@
+.c-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(236, 236, 236);
+  z-index: 100;
+  @include min-screen($breakpoint-pc) {
+    position: static;
+    .inner {
+      width: $breakpoint-pc;
+      margin: 0 auto;
+    }
+  }
+  .header-top {
+    height: $headerHeight;
+    padding: 10px 15px;
+    display: flex;
+    position: relative;
+    .logo {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      a {
+        display: flex;
+        align-items: center;
+      }
+      img {
+        height: 45px;
+        margin-right: 15px;
+      }
+      @include min-screen($breakpoint-pc) {
+        width: 200px;
+      }
+    }
+  }
+  .nav-btn {
+    position: absolute;
+    display: block;
+    width: 45px;
+    height: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    background-image: url("#{$commonImgDir}hamburger.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 30px auto;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    @include min-screen($breakpoint-pc) {
+      display: none;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    &.js-active {
+      background-image: url("#{$commonImgDir}close.svg");
+      background-size: 22px 22px;
+    }
+  }
+  @include min-screen($breakpoint-pc) {
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .nav-pc {
+    display: none;
+    @include min-screen($breakpoint-pc) {
+      display: flex;
+      margin-left: auto;
+      align-items: center;
+      justify-content: space-between;
+      .nav-pc-list {
+        display: flex;
+        .item + .item {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+  .header-nav {
+    display: none;
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    width: 100%;
+    overflow-y: scroll;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 100;
+    &.is-visible {
+      display: block;
+    }
+    @include min-screen($breakpoint-pc) {
+      position: static;
+      width: 1000px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .list-main-sp {
+      padding: vw(10) vw(40) vw(20);
+      max-width: vw(375);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      @include min-screen($breakpoint-pc) {
+        display: none;
+      }
+    }
+  }
+}
+
+.c-toggle-content {
+  .js-toggle-content {
+    display: none;
+    &.is-visible {
+      display: block;
+    }
+  }
+  .js-toggle-btn {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.c-bread {
+  display: flex;
+  li:nth-child(n + 2) {
+    padding-left: 10px;
+    margin-left: 5px;
+    position: relative;
+    &:before {
+      content: ">";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+    }
+  }
+}
+
+.c-tab {
+  .tab-list {
+    display: flex;
+    justify-content: center;
+    .item {
+      width: 25%;
+      text-align: center;
+      border-top: 1px solid #ccc;
+      border-left: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      padding: 15px;
+      &:last-child {
+        border-right: 1px solid #ccc;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+      &.is-active {
+        border-bottom: none;
+        cursor: default;
+      }
+    }
+  }
+  .tab-content {
+    border: 1px solid #ccc;
+    border-top: none;
+    display: none;
+    padding: 30px;
+    &.is-visible {
+      display: block;
+    }
+  }
+}
+
+.c-footer {
+  background-color: rgb(236, 236, 236);
+  padding: vw(35) vw(18);
+  @include min-screen($breakpoint-pc) {
+    padding: 40px;
+    .inner {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+.c-top-btn {
+  display: block;
+  position: fixed;
+  z-index: 90;
+  bottom: 15px;
+  right: 15px;
+  width: 40px;
+  @include min-screen($breakpoint-pc) {
+    right: calc(((100% - #{$breakpoint-pc}) / 2) - 40px);
+  }
+}
+
+.c-lazy-photo {
+  width: 100%;
+  height: 0;
+  position: relative;
+  /* padding-topを個別に指定する */
+  .lazy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+// https://codepen.io/nabe_kurage/pen/VQxvMp
+.c-block-animation {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  padding: 15px 5px;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #f9ce00;
+    animation: secondaryImageOverlayIn 0.6s 0s cubic-bezier(0.77, 0, 0.175, 1),
+      secondaryImageOverlayOut 0.6s 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    animation-fill-mode: both;
+  }
+  p {
+    margin: 0.05em;
+    line-height: 1;
+    font-size: 20px;
+    animation: fadeIn 0.1s 0.5s;
+    animation-fill-mode: both;
+    font-weight: bold;
+  }
+  /*keyframesの設定*/
+  /*文字が消えている状態から現れるアニメーション*/
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  /*はじめにブロックを伸ばすアニメーション*/
+  @keyframes secondaryImageOverlayIn {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  /*のび太ブロックを横に追いやるアニメーション*/
+  @keyframes secondaryImageOverlayOut {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(102%);
+    }
+  }
+}

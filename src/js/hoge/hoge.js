@@ -4,7 +4,17 @@ import sal from 'sal.js'
 const tab = new Tab('js-tab', 'js-tab-content')
 tab.init()
 
-const scrollAnimations = sal()
+const inViewAnimateElements = document.querySelectorAll('.js-block-animated')
+
+inViewAnimateElements.forEach((element) => {
+  element.addEventListener('sal:in', ({ detail }) => {
+    console.log('entering', detail.target)
+    detail.target.classList.add('is-inview')
+  })
+})
+const scrollAnimations = sal({
+  threshold: 0.5,
+})
 
 class Toggle {
   constructor() {

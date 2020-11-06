@@ -107,23 +107,24 @@ html(lang="ja")
         div.l-section-inner
           h1 ブロックアニメーション
           div
-            .c-block-animation
+            .c-block-animation.js-block-animated(data-sal="")
               p あのイーハトーヴォのすきとおった風
           div
-            .c-block-animation
+            .c-block-animation.js-block-animated(data-sal="")
               p 夏でも底に冷たさをもつ青いそら
           div
-            .c-block-animation
-              img(src=`${commonImgDir}img06.jpg`)
+            .c-block-animation.u-p0.js-block-animated(data-sal="")
+              p
+                img(src=`${commonImgDir}img06.jpg`)
 
       section.l-section#anc-6
         div.l-section-inner
           h1 スクロールアニメーション
           div(data-sal="fade" data-sal-delay="600" data-sal-duration="1000" data-sal-easing="ease-out-back")
             p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          div(data-sal="flip-left" data-sal-delay="600" data-sal-duration="600" data-sal-easing="ease-out-quad" style="margin-top: 40px")
+          div(data-sal="flip-left" data-sal-delay="400" data-sal-duration="300" data-sal-easing="ease-out-quad" style="margin-top: 40px")
             img(src=`${commonImgDir}img07.jpg`)
-          div(data-sal="zoom-out" data-sal-delay="400" data-sal-duration="600" data-sal-easing="ease-out-quad" style="margin-top: 40px")
+          div(data-sal="zoom-out" data-sal-delay="400" data-sal-duration="300" data-sal-easing="ease-out-quad" style="margin-top: 40px")
             img(src=`${commonImgDir}img08.jpg`)
 
 

@@ -72,6 +72,13 @@ function html() {
     .pipe(gulp.dest(public.root))
 }
 
+// html release
+function htmlRelease() {
+  return gulp
+    .src([public.html, '!' + public.root + 'index.html'])
+    .pipe(gulp.dest(release.root))
+}
+
 // css
 function css() {
   return gulp
@@ -258,6 +265,7 @@ function useCritical() {
 exports.release = gulp.series(
   clean,
   html,
+  htmlRelease,
   css,
   cssRelease,
   js,

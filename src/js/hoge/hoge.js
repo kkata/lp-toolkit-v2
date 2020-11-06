@@ -8,7 +8,6 @@ const inViewAnimateElements = document.querySelectorAll('.js-block-animated')
 
 inViewAnimateElements.forEach((element) => {
   element.addEventListener('sal:in', ({ detail }) => {
-    console.log('entering', detail.target)
     detail.target.classList.add('is-inview')
   })
 })

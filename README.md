@@ -129,6 +129,6 @@ $ npm run release
 
 ## 参考
 
-[https://github.com/manabuyasuda/website-template](https://github.com/manabuyasuda/website-template)
+[https://github.com/manabuyasuda/website-template](https://github.com/manabuyasuda/website-template)  
 [普通の HTML の書き方](https://github.com/hail2u/html-best-practices/blob/master/README.ja.md)  
 [フロントエンドチェックリスト日本語訳](https://github.com/miya0001/Front-End-Checklist)

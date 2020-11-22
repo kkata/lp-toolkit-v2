@@ -13,3 +13,8 @@ a:focus {
   opacity: 0.7;
   transition: all 0.3s;
 }
+
+[data-whatinput="mouse"] *:focus,
+[data-whatinput="touch"] *:focus {
+  outline: none;
+}

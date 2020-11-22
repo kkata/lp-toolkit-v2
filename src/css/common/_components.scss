@@ -151,20 +151,21 @@
     justify-content: center;
     .item {
       width: 25%;
-      text-align: center;
-      border-top: 1px solid #ccc;
-      border-left: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
-      padding: 15px;
-      &:last-child {
+      &:last-child button {
         border-right: 1px solid #ccc;
       }
-      &:hover {
-        cursor: pointer;
-      }
-      &.is-active {
-        border-bottom: none;
-        cursor: default;
+      button {
+        display: block;
+        padding: 15px;
+        text-align: center;
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        width: 100%;
+        &.is-active {
+          border-bottom: none;
+          cursor: default;
+        }
       }
     }
   }

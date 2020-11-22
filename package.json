@@ -51,7 +51,8 @@
     "core-js": "^3.6.5",
     "jquery": "^3.5.1",
     "moveto": "^1.8.2",
-    "vanilla-lazyload": "^17.1.2"
+    "vanilla-lazyload": "^17.1.2",
+    "what-input": "^5.2.10"
   },
   "husky": {
     "hooks": {

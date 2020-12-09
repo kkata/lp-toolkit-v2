@@ -182,7 +182,7 @@
 
 .c-footer {
   background-color: rgb(236, 236, 236);
-  padding: vw(35) vw(18);
+  padding: vw(100) vw(18);
   @include min-screen($breakpoint-pc) {
     padding: 40px;
     .inner {

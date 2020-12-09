@@ -12,7 +12,8 @@ inViewAnimateElements.forEach((element) => {
   })
 })
 const scrollAnimations = sal({
-  threshold: 0.5,
+  rootMargin: '0px 0px -40% 0px',
+  threshold: 0.4,
 })
 
 class Toggle {

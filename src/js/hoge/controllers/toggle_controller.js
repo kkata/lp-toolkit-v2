@@ -10,7 +10,7 @@ export default class extends Controller {
   }
 
   toggleContent() {
-    this.contentTarget.classList.toggle(this.data.get('visibleClass'))
+    this.contentTarget.classList.toggle(this.visibleClass)
   }
 
   toggleText(e) {

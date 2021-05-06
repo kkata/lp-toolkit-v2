@@ -27,6 +27,7 @@
     "browser-sync": "^2.26.14",
     "cssnano": "^5.0.2",
     "del": "^6.0.0",
+    "fibers": "^5.0.0",
     "gulp": "^4.0.2",
     "gulp-convert-encoding": "^2.1.0",
     "gulp-gzip": "^1.4.2",
@@ -45,6 +46,7 @@
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
     "sal.js": "^0.8.4",
+    "sass": "^1.32.12",
     "webpack": "^5.36.1",
     "webpack-stream": "^6.1.2"
   },

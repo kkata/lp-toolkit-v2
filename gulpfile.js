@@ -1,6 +1,8 @@
 const gulp = require('gulp')
 const pug = require('gulp-pug')
 const sass = require('gulp-sass')
+sass.compiler = require('sass')
+const Fiber = require('fibers')
 const postcss = require('gulp-postcss')
 const cachebuster = require('postcss-cachebuster')
 const cssnano = require('cssnano')
@@ -86,7 +88,7 @@ function css() {
       sourcemaps: true,
     })
     .pipe(plumber({ errorHandler: notify.onError('<%= error.message %>') }))
-    .pipe(sass())
+    .pipe(sass({ fiber: Fiber }))
     .pipe(
       postcss([
         autoprefixer({

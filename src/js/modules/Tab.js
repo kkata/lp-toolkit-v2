@@ -1,49 +1,52 @@
 class Tab {
-  constructor(tabClassName, tabContentClassName) {
+  constructor(tabClassName, tabContentClassName, initialTab) {
     this.tab = document.getElementsByClassName(tabClassName)
     this.tabContent = document.getElementsByClassName(tabContentClassName)
-    this.tabActiveClassName = 'is-active'
-    this.tabContentVisibleClassName = 'is-visible'
+    this.initialTab = initialTab
   }
 
   init() {
     if (!this.tab) return
     this.bindEvent()
-    this.changeVisibility(this.tab[0], this.tabContent[0])
+    this.changeButtonSate(
+      document.querySelector('[aria-controls=' + this.initialTab + ']'),
+    )
+    this.changeTabPanel(
+      document.querySelector('[aria-controls=' + this.initialTab + ']'),
+    )
   }
 
-  removeClassName(nodeList, className) {
-    Array.prototype.slice.call(nodeList).forEach((elem) => {
-      elem.classList.remove(className)
-    })
-  }
-  hasClassName(elem, className) {
-    return elem.classList.contains(className)
-  }
-  changeVisibility(target, content) {
-    this.removeClassName(this.tab, this.tabActiveClassName)
-    this.removeClassName(this.tabContent, this.tabContentVisibleClassName)
-    content.classList.add(this.tabContentVisibleClassName)
-    target.classList.add(this.tabActiveClassName)
-  }
-  handleClickPc(event) {
-    event.preventDefault()
-    const target = event.currentTarget
-    const content = document.querySelector(
-      '.' + event.currentTarget.dataset.target,
-    )
-    this.changeVisibility(target, content)
-  }
   addEvent(listenerPc) {
-    Array.prototype.slice.call(this.tab).forEach((elem) => {
-      elem.addEventListener('click', listenerPc, false)
+    this.tab.forEach((element) => {
+      element.addEventListener('click', listenerPc, false)
     })
   }
   bindEvent() {
     const listenerPc = () => {
-      this.handleClickPc(event)
+      this.handleTab(event)
     }
     this.addEvent(listenerPc)
+  }
+
+  handleTab(event) {
+    this.changeButtonSate(event.currentTarget)
+    this.changeTabPanel(event.currentTarget)
+  }
+
+  changeButtonSate(target) {
+    this.tab.forEach((element) => {
+      element.ariaSelected = false
+    })
+    target.ariaSelected = true
+  }
+
+  changeTabPanel(target) {
+    this.tabContent.forEach((element) => {
+      element.ariaHidden = true
+    })
+    document.getElementById(
+      target.getAttribute('aria-controls'),
+    ).ariaHidden = false
   }
 }
 

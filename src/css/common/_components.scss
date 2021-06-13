@@ -146,6 +146,18 @@
 }
 
 .c-tab {
+  [aria-hidden="true"] {
+    display: none;
+  }
+
+  [aria-hidden="false"] {
+    display: block;
+  }
+
+  [aria-selected="true"] {
+    background-color: royalblue;
+    color: white;
+  }
   .tab-list {
     display: flex;
     justify-content: center;
@@ -162,21 +174,13 @@
         border-left: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
         width: 100%;
-        &.is-active {
-          border-bottom: none;
-          cursor: default;
-        }
       }
     }
   }
   .tab-content {
     border: 1px solid #ccc;
     border-top: none;
-    display: none;
     padding: 30px;
-    &.is-visible {
-      display: block;
-    }
   }
 }
 

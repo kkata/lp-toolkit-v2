@@ -71,20 +71,20 @@ html(lang="ja")
           div.c-tab
             ul.tab-list
               li.item
-                button.js-tab(data-target="js-tab-content-one") tab1
+                button.js-tab(aria-controls="js-tab-1",aria-selected="true",type="button",role="tab") tab1
               li.item
-                button.js-tab(data-target="js-tab-content-two") tab2
+                button.js-tab(aria-controls="js-tab-2",aria-selected="false",type="button",role="tab") tab2
               li.item
-                button.js-tab(data-target="js-tab-content-three") tab3
+                button.js-tab(aria-controls="js-tab-3",aria-selected="false",type="button",role="tab") tab3
               li.item
-                button.js-tab(data-target="js-tab-content-four") tab4
-            .tab-content.js-tab-content.js-tab-content-one
+                button.js-tab(aria-controls="js-tab-4",aria-selected="false",type="button",role="tab") tab4
+            #js-tab-1.tab-content.js-tab-content(role="tabpanel",aria-hidden="false")
               p tab content 1
-            .tab-content.js-tab-content.js-tab-content-two
+            #js-tab-2.tab-content.js-tab-content(role="tabpanel",aria-hidden="true")
               p tab content 2
-            .tab-content.js-tab-content.js-tab-content-three
+            #js-tab-3.tab-content.js-tab-content(role="tabpanel",aria-hidden="true")
               p tab content 3
-            .tab-content.js-tab-content.js-tab-content-four
+            #js-tab-4.tab-content.js-tab-content(role="tabpanel",aria-hidden="true")
               p tab content 4
 
       section.l-section#anc-4

@@ -1,7 +1,7 @@
 import Tab from '../modules/Tab'
 import sal from 'sal.js'
 
-const tab = new Tab('js-tab', 'js-tab-content')
+const tab = new Tab('js-tab', 'js-tab-content', 'js-tab-1')
 tab.init()
 
 const inViewAnimateElements = document.querySelectorAll('.js-block-animated')

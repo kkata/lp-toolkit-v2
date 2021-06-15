@@ -35,6 +35,8 @@ html(lang="ja")
               li.item
                 a(href="#anc-2") トグル
               li.item
+                a(href="#anc-2-1") トグル（Alpine.js）
+              li.item
                 a(href="#anc-3") タブ
               li.item
                 a(href="#anc-4") 遅延読み込み画像（plugin利用）
@@ -64,6 +66,23 @@ html(lang="ja")
                 div.js-toggle-content.js-toggle-more-two
                   p またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。
                 button.more-btn.js-toggle-btn(data-target="js-toggle-more-two") 続きを読む
+
+      section.l-section#anc-2-1
+        div.l-section-inner
+          h1 トグル（Alpine.js）
+          ul.card-list
+            li.item
+              div.c-toggle-content(x-data="{ open: false, toggleText() { return this.open ? '閉じる' : '続きを読む' }}")
+                p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                div(x-show="open")
+                  p またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。
+                button.more-btn(@click="open = ! open", x-text="toggleText()")
+            li.item
+              div.c-toggle-content(x-data="{ open: false, toggleText() { return this.open ? '閉じる' : '続きを読む' }}")
+                p あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+                div(x-show="open")
+                  p またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。
+                button.more-btn(@click="open = ! open", x-text="toggleText()")
 
       section.l-section#anc-3
         div.l-section-inner

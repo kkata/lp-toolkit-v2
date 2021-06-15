@@ -1,5 +1,9 @@
 import Tab from '../modules/Tab'
 import sal from 'sal.js'
+import Alpine from 'alpinejs'
+
+window.Alpine = Alpine
+Alpine.start()
 
 const tab = new Tab('js-tab', 'js-tab-content', 'js-tab-1')
 tab.init()

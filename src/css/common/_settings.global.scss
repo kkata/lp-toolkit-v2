@@ -4,7 +4,7 @@
 
 // カラーパレット
 $color-text: #333 !default;
-$color-white: #fff !default;
+$color-white: white !default;
 
 // ==========================================================================
 // Typography
@@ -17,10 +17,10 @@ $base-line-height: 22px;
 $global-line-height: 1.8 !default;
 
 // システムフォント
-$global-font-family-sans-serif: YakuHanJPs, "Hiragino Kaku Gothic ProN", Meiryo,
+$global-font-family-sans-serif: yakuhanjps, "Hiragino Kaku Gothic ProN", meiryo,
   sans-serif !default;
-$global-font-family-serif: "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !default;
-$global-font-family-monospace: Consolas, Menlo, Courier, monospace !default;
+$global-font-family-serif: "Hiragino Mincho ProN", "HG明朝E", meiryo, serif !default;
+$global-font-family-monospace: consolas, menlo, courier, monospace !default;
 
 // ==========================================================================
 // Break Point
@@ -31,9 +31,9 @@ $breakpoint-pc: 960px;
 // ==========================================================================
 // Directory
 // ==========================================================================
-$commonImgDir: "/img/";
+$common-img-dir: "/img/";
 
 // ==========================================================================
 // other
 // ==========================================================================
-$headerHeight: 80px;
+$header-height: 80px;

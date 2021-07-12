@@ -1,4 +1,9 @@
-@mixin responsive-font-size($font-size, $font-size-pc: $font-size, $line-height: auto) {
+/* stylelint-disable scss/operator-no-newline-after */
+@mixin responsive-font-size(
+  $font-size,
+  $font-size-pc: $font-size,
+  $line-height: auto
+) {
   font-size: $font-size;
   // cf. https://websemantics.uk/tools/responsive-font-calculator/
   // font-size: ($font-size / $base-font-size) * 1rem;

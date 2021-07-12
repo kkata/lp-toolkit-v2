@@ -1,27 +1,27 @@
 .l-bread {
   max-width: $breakpoint-pc;
-  margin: 0 auto;
   padding: 15px;
+  margin: 0 auto;
 }
 
 .l-section-inner {
   padding: vw(40) vw(18);
   @include min-screen($breakpoint-mobile) {
     max-width: $breakpoint-pc;
-    margin: 0 auto;
     padding: 65px 10%;
+    margin: 0 auto;
   }
   @include min-screen($breakpoint-pc) {
-    padding-left: 50px;
     padding-right: 50px;
+    padding-left: 50px;
   }
 }
 
 .l-site {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
-  padding-top: $headerHeight;
+  min-height: 100vh;
+  padding-top: $header-height;
   @include min-screen($breakpoint-pc) {
     padding-top: 0;
   }

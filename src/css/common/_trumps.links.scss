@@ -1,10 +1,12 @@
+/* stylelint-disable  declaration-no-important */
+
 .u-link-bare {
   text-decoration: none !important;
 }
 
 .u-link-natural {
-  text-decoration: underline !important;
   color: inherit !important;
+  text-decoration: underline !important;
 }
 
 .u-link-obvious {

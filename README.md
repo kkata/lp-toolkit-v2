@@ -74,7 +74,8 @@ HTML にコンパイルされる前のテンプレートファイルをこのデ
 ### `src/css/`
 
 CSS にコンパイルされる前の [Sass](https://sass-lang.com/) ファイルをこのディレクトリに配置します。  
-設計は[ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)、[inuitcss](https://github.com/inuitcss/inuitcss) などを参考にしています。
+設計は[ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)、[inuitcss](https://github.com/inuitcss/inuitcss) などを参考にしています。  
+[stylelint](https://stylelint.io/) でフォーマットを行います。
 
 #### 暫定ルール
 

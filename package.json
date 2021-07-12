@@ -10,7 +10,8 @@
   "scripts": {
     "gulp": "gulp default",
     "release": "gulp release",
-    "pretty-quick": "pretty-quick"
+    "pretty-quick": "pretty-quick",
+    "lint:css": "stylelint **/*.scss"
   },
   "browserslist": [
     "last 2 versions"
@@ -47,6 +48,10 @@
     "pretty-quick": "^3.1.0",
     "sal.js": "^0.8.4",
     "sass": "^1.32.12",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-twbs-bootstrap": "^2.2.1",
+    "stylelint-scss": "^3.19.0",
     "webpack": "^5.36.1",
     "webpack-stream": "^6.1.2"
   },

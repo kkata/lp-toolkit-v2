@@ -1,3 +1,5 @@
+/* stylelint-disable  declaration-no-important */
+
 .u-mb40 {
   margin-bottom: vw(40) !important;
   @include min-screen($breakpoint-pc) {

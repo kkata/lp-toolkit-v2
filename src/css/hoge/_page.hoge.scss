@@ -1,5 +1,5 @@
 $img-dir: "/img/";
-@import "../../../node_modules/sal.js/dist/sal";
+@use "../../../node_modules/sal.js/dist/sal";
 
 h1 {
   margin-bottom: 30px;

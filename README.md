@@ -3,14 +3,14 @@ LP 開発環境
 以下の環境で動作を確認しています。
 
 - macOS Mojave 10.14.6
-- Node.js 12.18.0
-- npm 6.14.4
+- Node.js 16.2.0
+- npm 7.13.0
 
 Node.js のバージョンは[nodenv](https://github.com/nodenv/nodenv)で固定しています。
 
 ## 環境構築
 
-Node.js 12.18.0 以上がインストールされていれば、以下のコマンドでローカルサーバ（[http://localhost:3000](http://localhost:3000)）が立ち上がります。
+Node.js 16.2.0 以上がインストールされていれば、以下のコマンドでローカルサーバ（[http://localhost:3000](http://localhost:3000)）が立ち上がります。
 
 ```bash
 $ cd このディレクトリへのパス

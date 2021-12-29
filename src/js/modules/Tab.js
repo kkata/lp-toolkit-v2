@@ -17,7 +17,7 @@ class Tab {
   }
 
   addEvent(listenerPc) {
-    this.tab.forEach((element) => {
+    Array.from(this.tab).forEach((element) => {
       element.addEventListener('click', listenerPc, false)
     })
   }
@@ -34,14 +34,14 @@ class Tab {
   }
 
   changeButtonSate(target) {
-    this.tab.forEach((element) => {
+    Array.from(this.tab).forEach((element) => {
       element.ariaSelected = false
     })
     target.ariaSelected = true
   }
 
   changeTabPanel(target) {
-    this.tabContent.forEach((element) => {
+    Array.from(this.tabContent).forEach((element) => {
       element.ariaHidden = true
     })
     document.getElementById(

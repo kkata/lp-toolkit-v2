@@ -28,7 +28,6 @@
     "browser-sync": "^2.27.7",
     "cssnano": "^5.0.14",
     "del": "^6.0.0",
-    "fibers": "^5.0.0",
     "gulp": "^4.0.2",
     "gulp-convert-encoding": "^2.1.0",
     "gulp-gzip": "^1.4.2",

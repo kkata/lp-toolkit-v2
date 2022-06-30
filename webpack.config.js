@@ -7,7 +7,7 @@ glob
   .sync('**/*.js', {
     cwd: srcDir,
   })
-  .map(function(key) {
+  .map(function (key) {
     // {key:value}の連想配列を生成
     // { **/*.js : './src/**/*.js' }という形式のobjectになる
     entries[key] = path.resolve(srcDir, key)
@@ -23,7 +23,19 @@ module.exports = {
   },
 
   module: {
-    rules: [{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }],
+    rules: [
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+            },
+          },
+        ],
+      },
+    ],
   },
   devtool: 'source-map',
 }

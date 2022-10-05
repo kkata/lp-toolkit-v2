@@ -8,15 +8,27 @@ header.c-header(data-scroll-header)
         a(href="/")
           img(src=`${commonImgDir}logo.png` alt="logo")
           span ロゴ
-      button.nav-btn#js-nav-btn メニューボタン
+      //- button.nav-btn#js-nav-btn メニューボタン
       //- PC
       div.nav-pc
         ul.nav-pc-list
           li.item: a(href="/hoge/" target="_blank") pc nav menu item 1
           li.item: a(href="/hoge/") pc nav menu item 2
 
-    nav.header-nav#js-nav
-      //- SP
-      ul.list-main-sp
-        li.item: a(href="/hoge/") sp humberger menu item
-        li.item: a(href="/") トップページ
+    //- nav.header-nav#js-nav
+    //-   //- SP
+    //-   ul.list-main-sp
+    //-     li.item: a(href="/hoge/") sp humberger menu item
+    //-     li.item: a(href="/") トップページ
+    button#js-nav-btn.hamburger(type="button" aria-label="Menu" aria-expanded="false")
+      span.hamburger-line
+      span.hamburger-line
+      span.hamburger-line
+    nav#js-nav.hamburger-nav(aria-hidden="true")
+      ul.menu
+        li.menu-item
+          a.menu-link(href="/") menu item 1
+        li.menu-item
+          a.menu-link(href="/") menu item 2
+        li.menu-item
+          a.menu-link(href="/") menu item 3
